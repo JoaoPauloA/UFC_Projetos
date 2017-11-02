@@ -1,9 +1,13 @@
 package br.ufc.crateus.aps.model;
 
+import br.ufc.crateus.aps.controlador.Perfil;
+
 public abstract class Usuario {
-	private String nome;
 	private int id;
-	private String status;
+	private String nome;
+	private String login;
+	private String senha;
+	private Perfil perfil;
 
 	public int getId() {
 		return id;
@@ -21,12 +25,29 @@ public abstract class Usuario {
 		this.nome = nome;
 	}
 
-	public String getStatus() {
-		return status;
+	public Perfil getPerfil() {
+		return perfil;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setPerfil(Perfil perfil) {
+		this.perfil = perfil;
 	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
 
 }

@@ -1,19 +1,13 @@
 package br.ufc.crateus.aps.model;
 
+import br.ufc.crateus.aps.controlador.Perfil;
+
 public class Aluno extends Usuario {
-	private int matricula;
 
-	public Aluno(String nome, int matricula) {
+	public Aluno(String nome,String login,String senha) {
 		this.setNome(nome);
-		this.matricula = matricula; 
-		this.setStatus("Discente");
-	}
-
-	public int getMatri() {
-		return matricula;
-	}
-
-	public void setMatri(int matricula) {
-		this.matricula= matricula;
+		this.setLogin(login);
+		this.setSenha(senha);
+		this.setPerfil(Perfil.Discente);
 	}
 }
