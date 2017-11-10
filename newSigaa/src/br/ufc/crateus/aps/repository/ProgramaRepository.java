@@ -7,7 +7,6 @@ import br.ufc.crateus.aps.model.Programa;
 
 public class ProgramaRepository {
 	private static List<Programa> programas = new ArrayList<>();
-	private static int id = 0;
 
 	public static void save(Programa p) {
 		programas.add(p);
