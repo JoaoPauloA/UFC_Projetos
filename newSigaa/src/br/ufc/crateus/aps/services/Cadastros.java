@@ -1,6 +1,6 @@
 package br.ufc.crateus.aps.services;
 
-import br.ufc.crateus.aps.controlador.Perfil;
+import br.ufc.crateus.aps.controlador.entidades.Permissao;
 import br.ufc.crateus.aps.model.InstituicaoFinanceira;
 import br.ufc.crateus.aps.model.Programa;
 import br.ufc.crateus.aps.model.Projeto;
@@ -16,7 +16,7 @@ public class Cadastros {
 	}
 
 	public static void inserirProjeto(Projeto p, Usuario u, Programa prog) {
-		if (u.getPerfil() == Perfil.Docente) {
+		if (u.getPerfil().getPermissoes().contains(Permissao.Cadastrar_projeto)) {
 			prog.getProjetos().add(p);
 			ProjetoRepository.add(p);
 		} else {
@@ -25,7 +25,7 @@ public class Cadastros {
 	}
 
 	public static void inserirIf(Usuario u, InstituicaoFinanceira iff) {
-		if (u.getPerfil() == Perfil.Admin)
+		if (u.getPerfil().getPermissoes().contains(Permissao.Cadastrar_if))
 			IFRepository.add(iff);
 		else {
 			System.out.println("Usuario sem permissao !!!");
@@ -33,7 +33,7 @@ public class Cadastros {
 	}
 
 	public static void inserirPrograma(Usuario u, InstituicaoFinanceira iff, Programa p) {
-		if (u.getPerfil() == Perfil.Admin) {
+		if (u.getPerfil().getPermissoes().contains(Permissao.Cadastrar_programa)) {
 			iff.getProgramas().add(p);
 			ProgramaRepository.save(p);
 		} else {

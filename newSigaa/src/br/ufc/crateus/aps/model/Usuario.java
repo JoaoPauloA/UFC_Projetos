@@ -1,6 +1,6 @@
 package br.ufc.crateus.aps.model;
 
-import br.ufc.crateus.aps.controlador.Perfil;
+import br.ufc.crateus.aps.controlador.entidades.Perfil;
 
 public abstract class Usuario {
 	private int id;

@@ -18,7 +18,7 @@ public class IFRepository {
 	}
 
 	public void setIfs(List<InstituicaoFinanceira> ifs) {
-		this.ifs = ifs;
+		IFRepository.ifs = ifs;
 	}
 
 	public static int getId() {
@@ -26,7 +26,7 @@ public class IFRepository {
 	}
 
 	public void setId(int id) {
-		this.id = id;
+		IFRepository.id = id;
 	}
 	
 

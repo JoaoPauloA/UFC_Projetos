@@ -1,6 +1,6 @@
 package br.ufc.crateus.aps.model;
 
-import br.ufc.crateus.aps.controlador.Perfil;
+import br.ufc.crateus.aps.controlador.entidades.Perfil;
 
 public class Admin extends Usuario {
 	

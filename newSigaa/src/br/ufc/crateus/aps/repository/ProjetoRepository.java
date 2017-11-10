@@ -1,9 +1,6 @@
 package br.ufc.crateus.aps.repository;
 
 import java.util.ArrayList;
-
-import br.ufc.crateus.aps.model.Aluno;
-import br.ufc.crateus.aps.model.Bolsa;
 import br.ufc.crateus.aps.model.Projeto;
 
 public class ProjetoRepository {
