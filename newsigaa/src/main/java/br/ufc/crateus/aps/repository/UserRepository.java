@@ -30,4 +30,13 @@ public class UserRepository {
 		return null;
 	}
 
+	public static Usuario BuscaPorLoginSenha(String login, String senha) {
+		for (Usuario u : usuarios) {
+			if (u.getLogin().equals(login) && u.getSenha().equals(senha))
+				return u;
+		}
+
+		return null;
+	}
+
 }

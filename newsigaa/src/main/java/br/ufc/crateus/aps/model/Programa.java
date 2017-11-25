@@ -6,6 +6,11 @@ public class Programa {
 	private String nome;
 	private ArrayList<Projeto> projetos = new ArrayList<Projeto>();
 
+	public Programa(String nome) {
+		super();
+		this.nome = nome;
+	}
+
 	public String getNome() {
 		return nome;
 	}

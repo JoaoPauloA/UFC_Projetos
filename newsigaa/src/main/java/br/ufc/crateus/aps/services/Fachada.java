@@ -7,7 +7,8 @@ import br.ufc.crateus.aps.repository.UserRepository;
 
 public class Fachada {
 	public static Usuario autenticar(String login, String senha) {
-		return UserRepository.BuscaPorLogin(login);
+		Usuario u = UserRepository.BuscaPorLoginSenha(login, senha);
+		return (u == null) ? null : u;
 	}
 
 	public static Usuario buscarUsuario(Usuario u, String nome) {

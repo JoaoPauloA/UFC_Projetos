@@ -21,7 +21,7 @@ public class App {
 		InstituicaoFinanceira iff = new InstituicaoFinanceira("4bank", 1);
 		Cadastros.inserirIf(admin, iff);
 
-		Programa p = new Programa();
+		Programa p = new Programa("progrma 123");
 		p.setNome("BIA");
 		Cadastros.inserirPrograma(admin, iff, p);
 
