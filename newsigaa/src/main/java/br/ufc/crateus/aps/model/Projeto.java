@@ -1,11 +1,16 @@
 package br.ufc.crateus.aps.model;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import br.ufc.crateus.aps.controlador.observer.ProjetoListener;
+import br.ufc.crateus.aps.controlador.observer.Status;
 
 public class Projeto {
 	private String nome;
 	private int id;
-	private ArrayList<Bolsa> bolsas;
+	private List<Bolsa> bolsas = new ArrayList<Bolsa>();
+	private List<ProjetoListener> listeners = new ArrayList<ProjetoListener>();
 
 	public Projeto(String nome) {
 		this.setNome(nome);
@@ -29,13 +34,23 @@ public class Projeto {
 		this.id = id;
 	}
 
-	public ArrayList<Bolsa> getBolsas() {
+	public List<Bolsa> getBolsas() {
 		return bolsas;
 	}
 
 	public void setBolsas(Bolsa bolsa) {
-		bolsa.setId(bolsas.size()+1);
+		bolsa.setId(bolsas.size() + 1);
 		this.bolsas.add(bolsa);
+	}
+
+	public void addListener(ProjetoListener p) {
+		this.listeners.add(p);
+	}
+
+	public void notificar(Status tipo) {
+		for (ProjetoListener p : listeners) {
+			p.notificar(tipo);
+		}
 	}
 
 }

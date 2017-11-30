@@ -1,8 +1,9 @@
 package br.ufc.crateus.aps.model;
 
 import br.ufc.crateus.aps.controlador.entidades.Perfil;
+import br.ufc.crateus.aps.controlador.observer.ProjetoListener;
 
-public abstract class Usuario {
+public abstract class Usuario implements ProjetoListener{
 	private int id;
 	private String nome;
 	private String login;

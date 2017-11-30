@@ -43,4 +43,13 @@ public class FachadaTest {
 		Programa p = Fachada.buscarProgramaPorNome("programa y");
 		assertNull(p);
 	}
+
+	@Test
+	public void testFacade() {
+		Fachada a = Fachada.getInstance();
+		Fachada b = Fachada.getInstance();
+
+		assertEquals(a.getInstance(), b.getInstance());
+
+	}
 }
