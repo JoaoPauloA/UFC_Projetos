@@ -1,5 +1,9 @@
 package br.ufc.crateus.aps.newsigaa;
 
+import br.ufc.crateus.aps.controlador.factory.Contato;
+import br.ufc.crateus.aps.controlador.factory.Mensageiro;
+import br.ufc.crateus.aps.controlador.factory.MensageiroFactory;
+import br.ufc.crateus.aps.controlador.observer.Status;
 import br.ufc.crateus.aps.model.Admin;
 import br.ufc.crateus.aps.model.InstituicaoFinanceira;
 import br.ufc.crateus.aps.model.Professor;
@@ -14,7 +18,7 @@ public class App {
 
 		Admin admin = new Admin("diego", "1010", "michael");
 		Cadastros.inserirUsuario(admin);
-		Usuario u = Fachada.autenticar(admin.getLogin(), admin.getSenha());
+		Usuario u = Fachada.getInstance().autenticar(admin.getLogin(), admin.getSenha());
 		if (u == null)
 			System.out.println("Usuario nao autenticado !!!");
 
@@ -27,10 +31,23 @@ public class App {
 
 		Professor professor = new Professor("andre", "andre", "andre123");
 		Cadastros.inserirUsuario(professor);
-		Usuario prof = Fachada.autenticar(professor.getLogin(), professor.getSenha());
-		Programa prog = Fachada.buscarProgramaPorNome("BIA");
+		Usuario prof = Fachada.getInstance().autenticar(professor.getLogin(), professor.getSenha());
+		Programa prog = Fachada.getInstance().buscarProgramaPorNome("BIA");
 
 		Cadastros.inserirProjeto(new Projeto("projeto x"), prof, prog);
+
+		// ------------
+
+		Mensageiro m = MensageiroFactory.getInstance(Contato.telefone);
+		m.enviar();
+
+		// ------------
+
+		Projeto p5 = new Projeto("Projeto j");
+		p5.addListener(prof);
+		p5.addListener(u);
+
+		p5.notificar(Status.selecao);
 
 	}
 

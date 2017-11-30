@@ -1,6 +1,8 @@
 package br.ufc.crateus.aps.model;
 
 import java.util.ArrayList;
+import br.ufc.crateus.aps.controlador.observer.ProjetoListener;
+import br.ufc.crateus.aps.controlador.observer.Status;
 
 public class Programa {
 	private String nome;
