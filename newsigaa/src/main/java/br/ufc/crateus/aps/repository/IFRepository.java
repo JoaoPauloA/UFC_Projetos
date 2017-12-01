@@ -1,7 +1,6 @@
 package br.ufc.crateus.aps.repository;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import br.ufc.crateus.aps.model.InstituicaoFinanceira;

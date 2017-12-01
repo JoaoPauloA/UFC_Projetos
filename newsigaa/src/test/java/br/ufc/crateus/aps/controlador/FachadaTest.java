@@ -11,7 +11,7 @@ import br.ufc.crateus.aps.model.InstituicaoFinanceira;
 import br.ufc.crateus.aps.model.Programa;
 import br.ufc.crateus.aps.model.Projeto;
 import br.ufc.crateus.aps.model.Usuario;
-import br.ufc.crateus.aps.repository.UserRepository;
+import br.ufc.crateus.aps.repository.UsuarioRepository;
 import br.ufc.crateus.aps.services.Cadastros;
 import br.ufc.crateus.aps.services.Fachada;
 
@@ -21,7 +21,7 @@ public class FachadaTest {
 	@BeforeClass
 	public static void setup() {
 		admin = new Admin("admin", "123", "Andre");
-		UserRepository.add(admin);
+		UsuarioRepository.add(admin);
 	}
 
 	@Test
