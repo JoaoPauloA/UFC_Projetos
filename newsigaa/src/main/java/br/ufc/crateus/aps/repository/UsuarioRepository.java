@@ -3,7 +3,7 @@ package br.ufc.crateus.aps.repository;
 import java.util.ArrayList;
 import br.ufc.crateus.aps.model.Usuario;
 
-public class UserRepository {
+public class UsuarioRepository {
 	protected static ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
 	protected static int ids = 0;
 

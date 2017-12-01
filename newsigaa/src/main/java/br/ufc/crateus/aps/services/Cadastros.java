@@ -8,11 +8,11 @@ import br.ufc.crateus.aps.model.Usuario;
 import br.ufc.crateus.aps.repository.IFRepository;
 import br.ufc.crateus.aps.repository.ProgramaRepository;
 import br.ufc.crateus.aps.repository.ProjetoRepository;
-import br.ufc.crateus.aps.repository.UserRepository;
+import br.ufc.crateus.aps.repository.UsuarioRepository;
 
 public class Cadastros {
 	public static void inserirUsuario(Usuario user) {
-		UserRepository.add(user);
+		UsuarioRepository.add(user);
 	}
 
 	public static void inserirProjeto(Projeto p, Usuario u, Programa prog) {
