@@ -5,11 +5,31 @@ import br.ufc.crateus.aps.model.Usuario;
 
 public class UsuarioRepository {
 	protected static ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
-	protected static int ids = 0;
+	protected static int id = 0;
 
-	public static void add(Usuario user) {
-		user.setId(++ids);
+	public static void save(Usuario user) {
+		user.setId(++id);
 		usuarios.add(user);
+	}
+
+	public static void update(Usuario us) {
+		for (Usuario u : usuarios) {
+			if (u.getId() == us.getId()) {
+				u = us;
+				break;
+			}
+		}
+
+	}
+
+	public static void delete(int id) {
+		for (Usuario u : usuarios) {
+			if (u.getId() == id) {
+				usuarios.remove(u);
+				break;
+			}
+		}
+
 	}
 
 	public static Usuario BuscaPorNome(String nome) {

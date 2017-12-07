@@ -2,7 +2,6 @@ package br.ufc.crateus.aps.repository;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import br.ufc.crateus.aps.model.Programa;
 
 public class ProgramaRepository {
@@ -18,6 +17,26 @@ public class ProgramaRepository {
 				return p;
 		}
 		return null;
+	}
+
+	public static void update(Programa us) {
+		for (Programa u : programas) {
+			if (u.getId() == us.getId()) {
+				u = us;
+				break;
+			}
+		}
+
+	}
+
+	public static void delete(int id) {
+		for (Programa u : programas) {
+			if (u.getId() == id) {
+				programas.remove(u);
+				break;
+			}
+		}
+
 	}
 
 }
