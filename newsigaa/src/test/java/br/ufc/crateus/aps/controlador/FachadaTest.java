@@ -1,15 +1,11 @@
 package br.ufc.crateus.aps.controlador;
 
 import static org.junit.Assert.*;
-
-import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import br.ufc.crateus.aps.model.Admin;
-import br.ufc.crateus.aps.model.Aluno;
 import br.ufc.crateus.aps.model.InstituicaoFinanceira;
 import br.ufc.crateus.aps.model.Programa;
-import br.ufc.crateus.aps.model.Projeto;
 import br.ufc.crateus.aps.model.Usuario;
 import br.ufc.crateus.aps.repository.UsuarioRepository;
 import br.ufc.crateus.aps.services.Cadastros;
@@ -21,7 +17,7 @@ public class FachadaTest {
 	@BeforeClass
 	public static void setup() {
 		admin = new Admin("admin", "123", "Andre");
-		UsuarioRepository.add(admin);
+		UsuarioRepository.save(admin);
 	}
 
 	@Test

@@ -12,7 +12,7 @@ import br.ufc.crateus.aps.repository.UsuarioRepository;
 
 public class Cadastros {
 	public static void inserirUsuario(Usuario user) {
-		UsuarioRepository.add(user);
+		UsuarioRepository.save(user);
 	}
 
 	public static void inserirProjeto(Projeto p, Usuario u, Programa prog) {

@@ -1,11 +1,10 @@
 package br.ufc.crateus.aps.model;
 
 import java.util.ArrayList;
-import br.ufc.crateus.aps.controlador.observer.ProjetoListener;
-import br.ufc.crateus.aps.controlador.observer.Status;
 
 public class Programa {
 	private String nome;
+	private int id;
 	private ArrayList<Projeto> projetos = new ArrayList<Projeto>();
 
 	public Programa(String nome) {
@@ -27,6 +26,14 @@ public class Programa {
 
 	public void setProjetos(ArrayList<Projeto> projetos) {
 		this.projetos = projetos;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 }
