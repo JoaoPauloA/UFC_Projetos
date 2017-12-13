@@ -52,5 +52,5 @@ public class Projeto {
 			p.notificar(tipo);
 		}
 	}
-
+	
 }

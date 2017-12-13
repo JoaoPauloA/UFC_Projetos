@@ -1,10 +1,12 @@
 package br.ufc.crateus.aps.model;
 
 import br.ufc.crateus.aps.controlador.entidades.Perfil;
-import br.ufc.crateus.aps.controlador.observer.ProjetoListener;
 import br.ufc.crateus.aps.controlador.observer.Status;
 
 public class Professor extends Usuario {
+
+	private String informacoes;
+
 	public Professor(String nome, String login, String senha) {
 		this.setNome(nome);
 		this.setLogin(login);
@@ -21,6 +23,14 @@ public class Professor extends Usuario {
 			System.out.println("etapa 1");
 		}
 
+	}
+
+	public String getInformacoes() {
+		return informacoes;
+	}
+
+	public void setInformacoes(String informacoes) {
+		this.informacoes = informacoes;
 	}
 
 }
