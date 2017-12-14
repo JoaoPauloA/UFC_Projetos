@@ -1,5 +1,9 @@
 package br.ufc.crateus.aps.services;
 
+import br.ufc.crateus.aps.exceptions.ExceptionNull;
+import br.ufc.crateus.aps.model.Aluno;
+import br.ufc.crateus.aps.model.Bolsa;
+import br.ufc.crateus.aps.model.Professor;
 import br.ufc.crateus.aps.model.Programa;
 import br.ufc.crateus.aps.model.Usuario;
 import br.ufc.crateus.aps.repository.ProgramaRepository;
@@ -22,6 +26,18 @@ public class Fachada {
 
 	public static Programa buscarProgramaPorNome(String p) {
 		return ProgramaRepository.BuscarPorNome(p);
+	}
+
+	public static Professor registrarFrequencia(Aluno a, Professor p, Bolsa b) throws ExceptionNull {
+		if (autenticar(p.getLogin(), p.getSenha()) != null) {
+			// b.chamada(0, true, a, p); //nao foi implementado
+			return p;
+		}
+		return null;
+	}
+
+	public static void cadastrarInformacao(Professor p, String informacoes) {
+		p.setInformacoes(informacoes);
 	}
 
 	public static synchronized Fachada getInstance() {
