@@ -38,10 +38,13 @@ public class FachadaTest {
 		Programa p1 = new Programa("programa fulano");
 
 		try {
-			assertNotNull(Cadastros.cadastrarProjeto(p, professor, p1));
+			Cadastros.cadastrarProjeto(p, professor, p1);
 		} catch (ExceptionNull e) {
 			e.printStackTrace();
 		}
+
+		Projeto p2 = Fachada.buscarProjetoPorNome(p.getNome());
+		assertEquals(p, p2);
 
 	}
 
@@ -52,10 +55,12 @@ public class FachadaTest {
 		Bolsa b = new Bolsa("iniciacao a latencia", p);
 
 		try {
-			assertNotNull(Cadastros.increverSeProjeto(b, aluno));
+			Cadastros.increverSeProjeto(b, aluno);
 		} catch (ExceptionNull e) {
 			e.printStackTrace();
 		}
+		
+		assertTrue(b.getAlunos().contains(aluno));
 
 	}
 
@@ -75,7 +80,7 @@ public class FachadaTest {
 	@Test
 	public void cadastrarInformacoes() {
 		professor.setInformacoes("proxima semana tem a 2 etapa da bolsa fulano de tal");
-		// assertTrue(true);
+		assertTrue(true);
 	}
 
 	@Test

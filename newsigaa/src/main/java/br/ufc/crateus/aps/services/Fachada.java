@@ -5,8 +5,10 @@ import br.ufc.crateus.aps.model.Aluno;
 import br.ufc.crateus.aps.model.Bolsa;
 import br.ufc.crateus.aps.model.Professor;
 import br.ufc.crateus.aps.model.Programa;
+import br.ufc.crateus.aps.model.Projeto;
 import br.ufc.crateus.aps.model.Usuario;
 import br.ufc.crateus.aps.repository.ProgramaRepository;
+import br.ufc.crateus.aps.repository.ProjetoRepository;
 import br.ufc.crateus.aps.repository.UsuarioRepository;
 
 public class Fachada {
@@ -30,7 +32,7 @@ public class Fachada {
 
 	public static Professor registrarFrequencia(Aluno a, Professor p, Bolsa b) throws ExceptionNull {
 		if (autenticar(p.getLogin(), p.getSenha()) != null) {
-			// b.chamada(0, true, a, p); //nao foi implementado
+			// b.chamada(0, true, a, p); //nao foi implementado por completo
 			return p;
 		}
 		return null;
@@ -44,6 +46,11 @@ public class Fachada {
 		if (instance == null)
 			instance = new Fachada();
 		return instance;
+	}
+
+	public static Projeto buscarProjetoPorNome(String nome) {
+
+		return ProjetoRepository.BuscarPorNome(nome);
 	}
 
 }
